@@ -1,0 +1,11 @@
+{
+  "id": "file-timer",
+  "name": "File Timer",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "A simple timer that runs independently for each file.",
+  "author": "m1nuzz",
+  "authorUrl": "https://github.com/m1nuzz",
+  "fundingUrl": "https://ko-fi.com/m1nuz",
+  "isDesktopOnly": false
+}

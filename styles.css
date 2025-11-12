@@ -1,0 +1,179 @@
+body {
+    --timer-bg: #202020;
+    --timer-text: #d0d0d0;
+    --digit-bg: #333;
+    --digit-text: #fff;
+    --button-bg: #444;
+    --button-hover-bg: #555;
+}
+
+.timer-view-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: sans-serif;
+    min-height: 100%;
+    background-color: var(--timer-bg);
+    color: var(--timer-text);
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    container-type: inline-size;
+}
+
+.timer-title {
+    font-size: clamp(1em, 4cqw, 1.5em) !important;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.time-display-input {
+    font-family: 'Roboto Mono', monospace;
+    font-size: clamp(0.65rem, 18cqw, 4rem) !important;
+    font-weight: bold;
+    color: var(--timer-text);
+    background-color: var(--digit-bg);
+    padding: clamp(4px, 1.5cqw, 10px) clamp(6px, 2cqw, 20px) !important;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 0 !important;
+    line-height: 1 !important;
+    border: 1px solid transparent;
+    text-align: center;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.time-display-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.time-modifiers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(3px, 1cqw, 8px) !important;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.mod-button {
+    background-color: var(--button-bg);
+    border: none;
+    color: var(--timer-text);
+    padding: clamp(4px, 1.5cqw, 8px) clamp(6px, 2cqw, 12px) !important;
+    font-size: clamp(0.6rem, 2.5cqw, 0.9rem) !important;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.mod-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.main-controls {
+    display: flex;
+    justify-content: center;
+    gap: clamp(6px, 2cqw, 12px) !important;
+    width: 100%;
+}
+
+.main-control-button {
+    background-color: var(--color-accent);
+    border: none;
+    color: white;
+    padding: clamp(6px, 2cqw, 10px) clamp(12px, 4cqw, 20px) !important;
+    font-size: clamp(0.85em, 3cqw, 1.1em) !important;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+    flex: 1;
+    max-width: 150px;
+    min-width: 0;
+}
+
+.main-control-button.reset {
+    background-color: var(--button-bg);
+}
+
+.main-control-button:hover {
+    opacity: 0.9;
+}
+
+.save-time-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(4px, 1.5cqw, 8px) !important;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.save-time-checkbox {
+    width: clamp(14px, 3cqw, 18px) !important;
+    height: clamp(14px, 3cqw, 18px) !important;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.save-time-label {
+    font-size: clamp(0.7em, 2.5cqw, 0.95em) !important;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+@media (width <= 250px) {
+    .timer-view-container .time-display-input {
+        font-size: 1.4rem !important;
+        padding: 4px 6px !important;
+    }
+    
+    .mod-button {
+        font-size: 0.65rem !important;
+        padding: 3px 4px !important;
+    }
+    
+    .time-modifiers {
+        gap: 3px !important;
+    }
+}
+
+@media (width <= 200px) {
+    .timer-view-container .time-display-input {
+        font-size: 1.1rem !important;
+        padding: 3px 5px !important;
+    }
+    
+    .mod-button {
+        font-size: 0.6rem !important;
+        padding: 3px 3px !important;
+    }
+    
+    .time-modifiers {
+        gap: 2px !important;
+    }
+}
+
+@media (width <= 180px) {
+    .timer-view-container .time-display-input {
+        font-size: 0.95rem !important;
+        padding: 2px 4px !important;
+    }
+    
+    .mod-button {
+        font-size: 0.55rem !important;
+        padding: 2px 2px !important;
+    }
+    
+    .time-modifiers {
+        gap: 2px !important;
+    }
+}
